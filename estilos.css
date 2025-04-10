@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  /* Fondo tipo rollo horizontal */
+  .scrolling-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .scrolling-images {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: scrollLeftToRight 60s linear infinite;
+  }
+  
+  .scrolling-images img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+  
+  /* Movimiento horizontal */
+  @keyframes scrollLeftToRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  /* Cuadro del mensaje */
+  .message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+    color: black;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    z-index: 1;
+  }
+  
+  .message-box h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .message-box p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  /* Corazones flotantes */
+  .hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: floatHeart 4s ease-in infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes floatHeart {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100vh) rotate(45deg);
+    }
+  }
+  

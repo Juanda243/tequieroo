@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te quiero❤</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Fondo en movimiento -->
+  <div class="scrolling-background">
+    <div class="scrolling-images">
+      <img src="img1.jpg" alt="Imagen 1">
+      <img src="img2.jpg" alt="Imagen 2">
+      <img src="img3.jpg" alt="Imagen 3">
+      <img src="img4.jpg" alt="Imagen 4">
+      <img src="img5.jpg" alt="Imagen 5">
+      <img src="img6.jpg" alt="Imagen 6">
+      <img src="img7.jpg" alt="Imagen 7">
+      <img src="img8.jpg" alt="Imagen 8">
+      <img src="img9.jpg" alt="Imagen 9">
+      <img src="img10.jpg" alt="Imagen 10">
+      <img src="img1.jpg" alt="Imagen 1 repetida">
+      <img src="img2.jpg" alt="Imagen 2 repetida">
+      <img src="img3.jpg" alt="Imagen 3 repetida">
+      <img src="img4.jpg" alt="Imagen 4 repetida">
+      <img src="img5.jpg" alt="Imagen 5 repetida">
+      <img src="img6.jpg" alt="Imagen 6 repetida">
+      <img src="img7.jpg" alt="Imagen 7 repetida">
+      <img src="img8.jpg" alt="Imagen 8 repetida">
+      <img src="img9.jpg" alt="Imagen 9 repetida">
+      <img src="img10.jpg" alt="Imagen 10 repetida">
+    </div>
+  </div>
+
+  <!-- Corazones flotantes -->
+  <div class="hearts"></div>
+
+  <!-- Mensaje central -->
+  <div class="message-box">
+    <h1>Para ti, mi amor ❤️</h1>
+    <h2><p>
+      Quiero decirte que me agrado conocerte, mejor dicho
+      ha sido lo mejor de mi vida, quiero conocerte a ti y a tus sentimientos
+      y asi un día decirte que desde el primer momento que hablamos me gustaste y
+      quiero que en futuro sigamos hablando y podamos llegar a ser algo más, perdon
+      si me ilusiono muy rapido, pero yo quiero amarte, cuidarte y mas que todo respetarte
+      y quisiera saber, cual camino debo escoger para llegar a gustarte y a enamorarte.
+    
+    </h2></p>
+  </div>
+
+  <!-- Música opcional -->
+  <!--
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  -->
+
+  <script>
+    // Corazones flotando
+    const heartsContainer = document.querySelector('.hearts');
+    function crearCorazon() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(crearCorazon, 500);
+  </script>
+
+</body>
+</html>
